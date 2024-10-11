@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PeroTravel/static/css/main.e6c13ad2.css",
+    "main.js": "/PeroTravel/static/js/main.86256d17.js",
+    "index.html": "/PeroTravel/index.html",
+    "main.e6c13ad2.css.map": "/PeroTravel/static/css/main.e6c13ad2.css.map",
+    "main.86256d17.js.map": "/PeroTravel/static/js/main.86256d17.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.86256d17.js"
+  ]
+}
