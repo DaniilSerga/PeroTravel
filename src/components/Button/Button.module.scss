@@ -1,0 +1,32 @@
+@import 'styles/colors';
+
+.button {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 320px;
+    height: 50px;
+    background: $buttonGradient;
+    border: none;
+    border-radius: 60px;
+    color: $white;
+    outline: none;
+    transition: 0.2s;
+
+    & > p {
+        color: $white;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17.07px;
+        text-align: left;
+    }
+
+    &:hover {
+        transform: scale(105%);
+        box-shadow: 5px 5px 30px 10px rgba($black, 0.3);
+    }
+}

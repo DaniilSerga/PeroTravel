@@ -1,7 +1,15 @@
+import {Footer, Header} from 'components';
+import {NavigationRoutes} from 'pages';
 import React from 'react';
 
 const App = () => {
-	return <div className="App"></div>;
+	return (
+		<>
+			<Header />
+			<NavigationRoutes />
+			<Footer />
+		</>
+	);
 };
 
 export default App;

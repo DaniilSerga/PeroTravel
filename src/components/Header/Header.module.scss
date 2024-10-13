@@ -1,0 +1,47 @@
+@import 'styles/colors';
+
+.headerContainer {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 26px 160px;
+
+    & > nav {
+        margin-left: auto;
+    }
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+
+    & > li > .active {
+        color: $yellow;
+    }
+}
+
+.defaultLink {
+    color: $white;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+        color: rgba($white, 0.8);
+    }
+}
+
+.activeLink {
+    @extend .defaultLink;
+    color: yellow;
+
+    &:hover {
+        color: rgba($yellow, 0.8);
+    }
+}
