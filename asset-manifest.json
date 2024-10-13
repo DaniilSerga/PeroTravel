@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/PeroTravel/static/css/main.e6c13ad2.css",
-    "main.js": "/PeroTravel/static/js/main.86256d17.js",
+    "main.css": "/PeroTravel/static/css/main.3b60d164.css",
+    "main.js": "/PeroTravel/static/js/main.08fef9eb.js",
+    "static/media/mainPageCover.webp": "/PeroTravel/static/media/mainPageCover.8e72f9436cab44487fa4.webp",
+    "static/media/mr_kindlyjasmineg.otf": "/PeroTravel/static/media/mr_kindlyjasmineg.4c32996e76bb7bc3ade3.otf",
+    "static/media/logo.svg": "/PeroTravel/static/media/logo.eca1d84c27bb741de4a99de0a935ddda.svg",
+    "static/media/vkIcon.svg": "/PeroTravel/static/media/vkIcon.06bbe9b945816a950b286cb419ad242a.svg",
+    "static/media/instaIcon.svg": "/PeroTravel/static/media/instaIcon.4c8bad1250c6b9d2370a68582989570a.svg",
+    "static/media/facebookIcon.svg": "/PeroTravel/static/media/facebookIcon.75d3a644ae5756cef7f4301bb4fa88ee.svg",
+    "static/media/arrowRight.svg": "/PeroTravel/static/media/arrowRight.084e18e7fb136ece93eab69a8307bb4a.svg",
     "index.html": "/PeroTravel/index.html",
-    "main.e6c13ad2.css.map": "/PeroTravel/static/css/main.e6c13ad2.css.map",
-    "main.86256d17.js.map": "/PeroTravel/static/js/main.86256d17.js.map"
+    "main.3b60d164.css.map": "/PeroTravel/static/css/main.3b60d164.css.map",
+    "main.08fef9eb.js.map": "/PeroTravel/static/js/main.08fef9eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.86256d17.js"
+    "static/css/main.3b60d164.css",
+    "static/js/main.08fef9eb.js"
   ]
 }
