@@ -1,10 +1,11 @@
-import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import pluginReact from 'eslint-plugin-react';
 import prettierConfig from 'eslint-config-prettier';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier';
 import importPlugin from 'eslint-plugin-import';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier';
+import pluginReact from 'eslint-plugin-react';
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default [
 	pluginJs.configs.recommended,
@@ -14,7 +15,11 @@ export default [
 	importPlugin.flatConfigs.recommended,
 	{
 		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-		plugins: {react: pluginReact, prettier: eslintPluginPrettierRecommended},
+		plugins: {
+			react: pluginReact, 
+			prettier: eslintPluginPrettierRecommended,
+			"simple-import-sort": simpleImportSort,
+		},
 		languageOptions: {
 			globals: globals.browser,
 			ecmaVersion: 'latest',
@@ -29,6 +34,20 @@ export default [
 			'import/no-named-as-default-member': 'off',
 			'import/no-dynamic-require': 'warn',
 			'import/no-nodejs-modules': 'warn',
+			"simple-import-sort/exports": "error",
+			"simple-import-sort/imports": [
+				"error",
+				{
+					"groups": [
+						["^react", "^redux"],
+						["^@?\\w"],
+						["^#"],
+						["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+						["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+						["^.+\\.s?css$"]
+					]
+				}
+			],
 		},
 		settings: {
 			react: {

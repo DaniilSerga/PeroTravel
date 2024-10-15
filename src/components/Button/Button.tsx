@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+
 import {Props} from './type';
 
 import styles from './Button.module.scss';

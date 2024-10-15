@@ -1,3 +1,7 @@
 @mixin pagePadding () {
-    padding: 160px;
+    padding-inline: 160px;
+
+    @media (max-width: 768px) {
+        padding-inline: 79px;
+    }
 }

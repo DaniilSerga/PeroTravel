@@ -1,0 +1,15 @@
+@import 'styles/mixins';
+
+.tripsHeading {
+    display: flex;
+    justify-content: space-between;
+    @include pagePadding;
+
+    & > a {
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14.63px;
+        text-align: left;
+    }
+}

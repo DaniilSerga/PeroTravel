@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import {AccountPage, MainPage, TripsPage} from 'pages';
 import {Route, Routes} from 'react-router-dom';
+
+import {AccountPage, MainPage, TripsPage} from 'pages';
 
 const NavigationRoutes: FC = () => {
 	return (
