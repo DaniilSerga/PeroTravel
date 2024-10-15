@@ -1,7 +1,19 @@
 @mixin pagePadding () {
     padding-inline: 160px;
 
-    @media (max-width: 768px) {
+    @include tablet {
         padding-inline: 79px;
+    }
+}
+
+@mixin tablet() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media (max-width: 428px) {
+        @content;
     }
 }
