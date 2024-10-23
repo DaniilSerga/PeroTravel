@@ -1,6 +1,12 @@
 @import 'styles/colors';
 @import 'styles/mixins';
 
+.tripsCarouselSection {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .tripsHeading {
     display: flex;
     justify-content: space-between;
@@ -33,7 +39,7 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     
-    & > div:first-child {
+    & > li:first-child {
         margin-left: 160px;
 
         @include tablet {
@@ -45,7 +51,7 @@
         }
     }
     
-    & > div:last-child {
+    & > li:last-child {
         margin-right: 160px;
     
         @include tablet {
@@ -103,10 +109,8 @@
 .cardContent {
     z-index: 2;
     position: relative;
-    // margin-top: 211px;
     display: grid;
     grid-template-rows: 1fr auto;
-    // flex-direction: column;
     height: 100%;
     padding: 211px 16px 42px;
     box-sizing: border-box;

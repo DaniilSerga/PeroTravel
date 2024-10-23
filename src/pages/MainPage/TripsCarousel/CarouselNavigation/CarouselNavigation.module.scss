@@ -1,5 +1,65 @@
 @import 'styles/colors';
+@import 'styles/mixins';
 
-.buttonsContainer > svg {
-    color: #FF0000;
+.navigationContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: 160px;
+
+    @include tablet {
+        margin-left: 79px;
+    }
+
+    @include mobile {
+        margin-left: 24px;
+    }
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 38px;
+    
+    & > button {
+        background-color: transparent;
+        border: none;
+        
+        &:not(.disabledButton) {
+            cursor: pointer;
+            transition: 0.2s;
+        }
+    }
+
+    & > button:first-child > svg {
+        transform: rotate(180deg);
+    }
+}
+
+.disabledButton > svg {
+    color: $gray;
+}
+
+.activeButton {
+    &:hover > svg {
+        color: rgba($blue, 0.8);
+    }
+
+    & > svg {
+        color: $blue;
+    }
+}
+
+.progressBarContainer {
+    position: relative;
+    height: 4px;
+    background-color: $gray;
+    border-radius: 2px;
+    flex-grow: 1;
+}
+
+.progressBar {
+    border: 2px solid $blue;
+    border-radius: 2px;
+    transition: width 0.3s;
 }

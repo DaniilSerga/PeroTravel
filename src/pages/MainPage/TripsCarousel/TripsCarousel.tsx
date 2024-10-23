@@ -1,31 +1,51 @@
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import moneyIcon from 'assets/icons/moneyIcon.svg';
 import timeIcon from 'assets/icons/timeIcon.svg';
 import {Button} from 'components';
 import {TRIPS} from 'constants/tripsData';
+import {useCarousel, useDebounce} from 'hooks';
 
 import {CarouselNavigation} from './CarouselNavigation';
 
 import styles from './TripsCarousel.module.scss';
 
 const TripsCarousel: FC = () => {
-	const carouselRef = useRef<HTMLDivElement>(null);
+	const carouselRef = useRef<HTMLUListElement>(null);
+	const {updateIndex, progress, updateProgress} = useCarousel(carouselRef);
+	const [isNextButtonDisabled, setNextButtonDisabled] = useState(false);
+	const [isPreviousButtonDisabled, setPreviousButtonDisabled] = useState(true);
+	const updateValues = useDebounce(({scrollLeft, scrollWidth, clientWidth}: HTMLUListElement) => {
+		const totalLength = scrollWidth - clientWidth;
+
+		setNextButtonDisabled(totalLength - scrollLeft === 0);
+		setPreviousButtonDisabled(scrollLeft === 0);
+		updateProgress((scrollLeft / totalLength) * 100);
+	});
+
+	const handleScroll = () => {
+		if (!carouselRef.current) {
+			return;
+		}
+
+		updateValues(carouselRef.current);
+	};
 
 	return (
-		<section>
+		<section className={styles.tripsCarouselSection}>
 			<div className={styles.tripsHeading}>
 				<h2>Популярные экскурсии</h2>
 				<Link to="trips">Смотреть все</Link>
 			</div>
 
-			<div
+			<ul
 				ref={carouselRef}
+				onScroll={() => handleScroll()}
 				className={styles.carousel}
 			>
 				{TRIPS.map((trip) => (
-					<div
+					<li
 						key={trip.id}
 						className={styles.card}
 					>
@@ -61,10 +81,15 @@ const TripsCarousel: FC = () => {
 								<Button label="Подробнее" />
 							</div>
 						</div>
-					</div>
+					</li>
 				))}
-			</div>
-			{/* <CarouselNavigation /> */}
+			</ul>
+			<CarouselNavigation
+				isNextButtonDisabled={isNextButtonDisabled}
+				isPreviousButtonDisabled={isPreviousButtonDisabled}
+				progress={progress}
+				updateIndex={updateIndex}
+			/>
 		</section>
 	);
 };
