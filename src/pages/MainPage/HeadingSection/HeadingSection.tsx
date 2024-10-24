@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
-import {Button} from 'components';
-import vkIcon from 'assets/icons/vkIcon.svg';
-import instaIcon from 'assets/icons/instaIcon.svg';
-import facebookIcon from 'assets/icons/facebookIcon.svg';
+
 import arrowRight from 'assets/icons/arrowRight.svg';
+import facebookIcon from 'assets/icons/facebookIcon.svg';
+import instaIcon from 'assets/icons/instaIcon.svg';
+import vkIcon from 'assets/icons/vkIcon.svg';
+import {Button} from 'components';
 
 import styles from './HeadingSection.module.scss';
 

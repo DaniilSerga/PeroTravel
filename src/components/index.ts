@@ -1,5 +1,5 @@
-import {Header} from './Header';
-import {Footer} from './Footer';
 import {Button} from './Button';
+import {Footer} from './Footer';
+import {Header} from './Header';
 
-export {Header, Footer, Button};
+export {Button, Footer, Header};

@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import moneyIcon from 'assets/icons/moneyIcon.svg';
